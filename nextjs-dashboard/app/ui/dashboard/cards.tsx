@@ -5,7 +5,9 @@ import {
   InboxIcon,
 } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
+import { fetchCardData } from '@/app/lib/data';
 
+// Tambahkan iconMap di sini untuk memetakan tipe dengan icon yang di-import
 const iconMap = {
   collected: BanknotesIcon,
   customers: UserGroupIcon,
@@ -14,6 +16,13 @@ const iconMap = {
 };
 
 export default async function CardWrapper() {
+  const {
+    numberOfInvoices,
+    numberOfCustomers,
+    totalPaidInvoices,
+    totalPendingInvoices,
+  } = await fetchCardData();
+  
   return (
     <>
       <Card title="Collected" value={totalPaidInvoices} type="collected" />
