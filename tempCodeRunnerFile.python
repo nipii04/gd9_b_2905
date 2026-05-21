@@ -1,0 +1,12 @@
+import tkinter as tk
+from tkinter import messagebox, ttk
+
+win= tk.Tk()
+
+win.title('LOGIN')
+
+win.label1= tk.Label(win, text= 'Nama Pelanggan')
+win.label1.pack()
+
+win.entry1= tk.Entry(win)
+win.entry1.pack()
